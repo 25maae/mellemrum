@@ -1,26 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router";
-import { usePageTitle } from "../hooks/usePageTitle";
-import { SUPABASE_URL, headers } from "../services/supabase";
+import { useRegistrations } from "../hooks/useRegistrations";
 
 export default function RegistrationsPage() {
-  usePageTitle("Tilmeldinger");
-  const [registrations, setRegistrations] = useState([]);
-  const [registrationCount, setRegistrationCount] = useState(0);
-
-  useEffect(() => {
-    async function getRegistrations() {
-      const response = await fetch(
-        `${SUPABASE_URL}/registrations?order=createdAt.desc`,
-        { headers },
-      );
-      const data = await response.json();
-      setRegistrations(data);
-      setRegistrationCount(data.length);
-    }
-
-    getRegistrations();
-  }, []);
+  const { registrations, registrationCount } = useRegistrations();
 
   return (
     <>

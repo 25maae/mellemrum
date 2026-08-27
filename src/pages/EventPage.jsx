@@ -1,27 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router";
 import { usePageTitle } from "../hooks/usePageTitle";
-import { SUPABASE_URL, headers } from "../services/supabase";
+import { useEvents } from "../hooks/useEvents";
 
 export default function EventPage() {
   const { eventId } = useParams();
-  const [event, setEvent] = useState(null);
+  const { event } = useEvents(eventId);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
   usePageTitle(event?.title || "Event");
-
-  useEffect(() => {
-    async function getEvent() {
-      const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}`, {
-        headers,
-      });
-      const data = await response.json();
-      setEvent(data[0]);
-    }
-
-    getEvent();
-  }, [eventId]);
 
   async function handleSubmit(eventSubmit) {
     eventSubmit.preventDefault();
