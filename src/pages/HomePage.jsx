@@ -1,20 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { usePageTitle } from "../utils/usePageTitle";
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const headers = {
   apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-  "Content-Type": "application/json"
+  "Content-Type": "application/json",
 };
 
 export default function HomePage() {
+  usePageTitle("Forside");
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Alle");
 
   useEffect(() => {
     async function getEvents() {
-      const response = await fetch(`${SUPABASE_URL}/events?order=date.asc`, { headers });
+      const response = await fetch(`${SUPABASE_URL}/events?order=date.asc`, {
+        headers,
+      });
       const data = await response.json();
       setEvents(data);
     }
@@ -22,10 +26,14 @@ export default function HomePage() {
     getEvents();
   }, []);
 
-  const categories = ["Alle", ...new Set(events.map((event) => event.category))];
+  const categories = [
+    "Alle",
+    ...new Set(events.map((event) => event.category)),
+  ];
 
   const filteredEvents = events.filter((event) => {
-    const searchText = `${event.title} ${event.summary} ${event.venueName}`.toLowerCase();
+    const searchText =
+      `${event.title} ${event.summary} ${event.venueName}`.toLowerCase();
     const matchesSearch = searchText.includes(search.toLowerCase());
     const matchesCategory = category === "Alle" || event.category === category;
 
@@ -37,7 +45,7 @@ export default function HomePage() {
     const formattedDate = date.toLocaleDateString("da-DK", {
       weekday: "long",
       day: "numeric",
-      month: "long"
+      month: "long",
     });
 
     return formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
@@ -49,7 +57,8 @@ export default function HomePage() {
         <p className="eyebrow">Kultur i Aarhus</p>
         <h1>Find plads til noget nyt.</h1>
         <p className="hero-copy">
-          Koncerter, talks og workshops samlet ét sted. Find dit næste event, og tilmeld dig på få minutter.
+          Koncerter, talks og workshops samlet ét sted. Find dit næste event, og
+          tilmeld dig på få minutter.
         </p>
         <a className="hero-link" href="#events">
           Se kommende events ↓
@@ -77,7 +86,10 @@ export default function HomePage() {
           </label>
           <label>
             Kategori
-            <select value={category} onChange={(event) => setCategory(event.target.value)}>
+            <select
+              value={category}
+              onChange={(event) => setCategory(event.target.value)}
+            >
               {categories.map((item) => (
                 <option key={item}>{item}</option>
               ))}
