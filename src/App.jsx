@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import EventPage from "./pages/EventPage";
@@ -10,6 +12,7 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/events/:eventId" element={<EventPage />} />
@@ -17,6 +20,7 @@ export default function App() {
         <Route path="/tilmeldinger" element={<RegistrationsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

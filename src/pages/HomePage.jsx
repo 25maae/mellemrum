@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { usePageTitle } from "../utils/usePageTitle";
-
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const headers = {
-  apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-  "Content-Type": "application/json",
-};
+import { SUPABASE_URL, headers } from "../services/supabase";
 
 export default function HomePage() {
   usePageTitle("Forside");
@@ -53,18 +48,6 @@ export default function HomePage() {
 
   return (
     <>
-      <header className="hero">
-        <p className="eyebrow">Kultur i Aarhus</p>
-        <h1>Find plads til noget nyt.</h1>
-        <p className="hero-copy">
-          Koncerter, talks og workshops samlet ét sted. Find dit næste event, og
-          tilmeld dig på få minutter.
-        </p>
-        <a className="hero-link" href="#events">
-          Se kommende events ↓
-        </a>
-      </header>
-
       <main id="events">
         <section className="section-heading">
           <div>
@@ -117,32 +100,6 @@ export default function HomePage() {
           ))}
         </section>
       </main>
-      <footer className="site-footer">
-        <div className="footer-top">
-          <div className="footer-intro">
-            <p className="footer-brand">
-              mellemrum<span>.</span>
-            </p>
-            <p>Udvalgte kulturoplevelser og nye perspektiver på Aarhus.</p>
-          </div>
-          <nav className="footer-links" aria-label="Footer">
-            <div className="footer-link-group">
-              <p className="footer-heading">Udforsk</p>
-              <Link to="/">Events</Link>
-              <Link to="/om">Om Mellemrum</Link>
-            </div>
-            <div className="footer-link-group">
-              <p className="footer-heading">For arrangører</p>
-              <Link to="/tilmeldinger">Se tilmeldinger</Link>
-              <a href="mailto:hej@mellemrum.dk">Kontakt os</a>
-            </div>
-          </nav>
-        </div>
-        <div className="footer-bottom">
-          <p className="footer-meta">© 2026 Mellemrum</p>
-          <p>Aarhus, Danmark</p>
-        </div>
-      </footer>
     </>
   );
 }
