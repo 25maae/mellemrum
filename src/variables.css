@@ -5,7 +5,6 @@
   --green: #173f35;
   --secondary-green: #225f50;
   --lime: #d8ff62;
-  --orange: #ff785a;
   --white: #ffffff;
 
   /* Layout */
@@ -17,6 +16,12 @@
     var(--page-gutter),
     calc((100vw - var(--content-width)) / 2)
   );
+/* Spacing */
+  --h1-spacing: -0.004em;
+  --h2-spacing: -0.020em;
+  --h3-spacing: -0.025em;
+  --strong-spacing: -0.005em;
+
 /* Typography */
   font-family:
     Inter,
