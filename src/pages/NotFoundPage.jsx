@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { usePageTitle } from "../utils/usePageTitle";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function NotFoundPage() {
   usePageTitle("Side ikke fundet");

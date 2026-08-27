@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { usePageTitle } from "../utils/usePageTitle";
+import { usePageTitle } from "../hooks/usePageTitle";
 import { SUPABASE_URL, headers } from "../services/supabase";
 
 export default function RegistrationsPage() {
