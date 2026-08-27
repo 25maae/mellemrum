@@ -1,21 +1,4 @@
-:root {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #17201d;
-  background: #f5f2ea;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  --ink: #17201d;
-  --paper: #f5f2ea;
-  --cream: #e9e3d6;
-  --green: #173f35;
-  --lime: #d8ff62;
-  --orange: #ff785a;
-  --line: rgba(23, 32, 29, 0.18);
-  --shadow: 0 18px 50px rgba(23, 32, 29, 0.09);
-  --page-gutter: clamp(1.25rem, 4vw, 4rem);
-  --content-width: 1280px;
-  --content-edge: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2));
-}
+@import url("variables.css");
 
 * {
   box-sizing: border-box;
@@ -47,7 +30,7 @@ select {
   background: var(--green);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 28px rgba(12, 42, 34, 0.12);
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: space-between;
   min-height: 80px;
@@ -75,24 +58,32 @@ select {
 
 .nav-links a {
   border-radius: 999px;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--white);
   font-size: 0.92rem;
   padding: 0.55rem 0.85rem;
   text-decoration: none;
-  transition: background 160ms ease, color 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   background: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: var(--white);
 }
 
 .hero {
   background:
-    linear-gradient(90deg, rgba(12, 42, 34, 0.92) 0%, rgba(12, 42, 34, 0.7) 52%, rgba(12, 42, 34, 0.28) 100%),
-    url("https://images.unsplash.com/photo-1595146463222-19603449c6af?q=80&w=3872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center / cover;
-  color: white;
+    linear-gradient(
+      90deg,
+      rgba(12, 42, 34, 0.92) 0%,
+      rgba(12, 42, 34, 0.7) 52%,
+      rgba(12, 42, 34, 0.28) 100%
+    ),
+    url("https://images.unsplash.com/photo-1595146463222-19603449c6af?q=80&w=3872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+      center / cover;
+  color: var(--white);
   min-height: 64vh;
   padding: clamp(5rem, 10vw, 9rem) var(--content-edge) 5rem;
 }
@@ -193,13 +184,15 @@ main {
 
 input,
 select {
-  background: white;
+  background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--ink);
   min-height: 48px;
   padding: 0.75rem 0.9rem;
-  transition: border-color 160ms ease, box-shadow 160ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 input:focus,
@@ -216,7 +209,7 @@ select:focus {
 }
 
 .event-card {
-  background: white;
+  background: var(--white);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: 0 8px 26px rgba(23, 32, 29, 0.05);
@@ -224,7 +217,9 @@ select:focus {
   flex-direction: column;
   min-height: 100%;
   overflow: hidden;
-  transition: box-shadow 180ms ease, transform 180ms ease;
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .event-card:hover {
@@ -247,7 +242,7 @@ select:focus {
 }
 
 .event-category {
-  color: #a5412c;
+  color: var(--lime);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.14em;
@@ -263,7 +258,7 @@ select:focus {
 }
 
 .event-card-content > p:not(.event-category) {
-  color: #59635f;
+  color: var(--paper);
   line-height: 1.5;
 }
 
@@ -280,13 +275,15 @@ select:focus {
   align-self: flex-start;
   background: var(--green);
   border-radius: 999px;
-  color: white;
+  color: var(--white);
   font-size: 0.88rem;
   font-weight: 750;
   margin-top: 1rem;
   padding: 0.7rem 1rem;
   text-decoration: none;
-  transition: background 160ms ease, color 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
 }
 
 .card-link:hover {
@@ -295,21 +292,27 @@ select:focus {
 }
 
 .message {
-  background: var(--cream);
+  background: var(--paper);
   padding: 1rem;
 }
 
 .page-header,
 .admin-header {
   background: var(--green);
-  color: white;
+  color: var(--white);
   padding: 5rem var(--content-edge);
 }
 
 .about-header {
   background:
-    linear-gradient(90deg, rgba(12, 42, 34, 0.9) 0%, rgba(12, 42, 34, 0.58) 58%, rgba(12, 42, 34, 0.2) 100%),
-    url("https://images.unsplash.com/photo-1553376482-e96b68bd1e11?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0") center / cover;
+    linear-gradient(
+      90deg,
+      rgba(12, 42, 34, 0.9) 0%,
+      rgba(12, 42, 34, 0.58) 58%,
+      rgba(12, 42, 34, 0.2) 100%
+    ),
+    url("https://images.unsplash.com/photo-1553376482-e96b68bd1e11?q=80&w=2400&auto=format&fit=crop&ixlib=rb-4.1.0")
+      center / cover;
   min-height: 68vh;
   display: flex;
   align-items: flex-end;
@@ -381,7 +384,7 @@ select:focus {
 .about-audiences {
   background: var(--green);
   border-radius: 18px;
-  color: white;
+  color: var(--white);
   overflow: hidden;
 }
 
@@ -406,7 +409,7 @@ select:focus {
 }
 
 .about-audience-split article:first-child {
-  background: #225f50;
+  background: var(--secondary-green);
 }
 
 .about-audience-split article:last-child {
@@ -427,7 +430,7 @@ select:focus {
 }
 
 .about-audience-split article:last-child span {
-  color: #355048;
+  color: var(--secondary-green);
 }
 
 .about-audience-split h3 {
@@ -474,7 +477,7 @@ select:focus {
 }
 
 .about-flow-list li:nth-child(2) {
-  border-color: #2f695a;
+  border-color: var(--secondary-green);
 }
 
 .about-flow-list li:nth-child(3) {
@@ -482,7 +485,7 @@ select:focus {
 }
 
 .about-flow-list span {
-  color: #a5412c;
+  color: var(--green);
   display: block;
   margin-bottom: 3.5rem;
 }
@@ -501,7 +504,7 @@ select:focus {
 
 .about-city {
   align-items: stretch;
-  background: var(--cream);
+  background: var(--paper);
   border-radius: 18px;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.75fr);
@@ -548,7 +551,7 @@ select:focus {
 .about-cta {
   background: var(--green);
   border-radius: 999px;
-  color: white;
+  color: var(--white);
   padding: 0.85rem 1.15rem;
   text-decoration: none;
 }
@@ -564,7 +567,7 @@ select:focus {
 }
 
 .event-detail {
-  background: white;
+  background: var(--paper);
   border-radius: 18px;
   box-shadow: var(--shadow);
   display: grid;
@@ -628,7 +631,7 @@ select:focus {
 .signup-panel button {
   background: var(--green);
   border: 0;
-  color: white;
+  color: var(--white);
   cursor: pointer;
   font-weight: 800;
   margin-top: 0.7rem;
@@ -655,7 +658,7 @@ select:focus {
 }
 
 .registration-list {
-  background: white;
+  background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: 0 8px 26px rgba(23, 32, 29, 0.05);
@@ -681,12 +684,12 @@ select:focus {
 }
 
 .registration-row small {
-  color: #65706c;
+  color: var(--paper);
   margin-top: 0.2rem;
 }
 
 .registration-labels {
-  background: var(--cream);
+  background: var(--paper);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -713,7 +716,7 @@ select:focus {
 
 .not-found-link {
   background: var(--green);
-  color: white;
+  color: var(--white);
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1rem;
@@ -721,7 +724,7 @@ select:focus {
 }
 
 .site-footer {
-  background: #102f28;
+  background: var(--green);
   color: rgba(255, 255, 255, 0.72);
   padding: clamp(3rem, 6vw, 5rem) var(--content-edge);
 }
@@ -743,7 +746,7 @@ select:focus {
 }
 
 .footer-brand {
-  color: white;
+  color: var(--white);
   font-size: clamp(2rem, 4vw, 3.6rem);
   font-weight: 850;
   letter-spacing: -0.06em;
@@ -775,7 +778,7 @@ select:focus {
 }
 
 .footer-link-group a {
-  color: white;
+  color: var(--white);
   padding: 0.28rem 0;
   text-decoration-color: rgba(216, 255, 98, 0.35);
   text-underline-offset: 0.25rem;
