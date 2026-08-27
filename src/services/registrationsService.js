@@ -1,9 +1,4 @@
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-
-const headers = {
-  apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
-  Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-};
+import { SUPABASE_URL, headers } from "../lib/supabase";
 
 export async function getRegistrations() {
   const response = await fetch(

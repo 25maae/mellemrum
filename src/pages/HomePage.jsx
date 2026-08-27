@@ -4,17 +4,14 @@ import { useEvents } from "../hooks/useEvents";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function HomePage() {
-  usePageTitle("Forside");
-
   const { events } = useEvents();
-
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Alle");
-
   const categories = [
     "Alle",
     ...new Set(events.map((event) => event.category)),
   ];
+  usePageTitle("Forside");
 
   const filteredEvents = events.filter((event) => {
     const searchText =

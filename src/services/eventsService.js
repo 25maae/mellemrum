@@ -1,8 +1,4 @@
-export const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-export const headers = {
-  apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-  "Content-Type": "application/json",
-};
+import { SUPABASE_URL, headers } from "../lib/supabase";
 
 export async function getEvents() {
   const response = await fetch(`${SUPABASE_URL}/events?order=date.asc`, {

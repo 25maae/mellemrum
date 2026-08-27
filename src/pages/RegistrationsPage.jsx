@@ -1,8 +1,10 @@
 import { useRegistrations } from "../hooks/useRegistrations";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function RegistrationsPage() {
   const { registrations, registrationCount } = useRegistrations();
-
+  usePageTitle("Tilmeldinger");
+  
   return (
     <>
       <header className="admin-header">
