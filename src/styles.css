@@ -346,10 +346,11 @@ select:focus {
 }
 
 .about-page {
-  display: grid;
-  gap: clamp(5rem, 9vw, 8rem);
-  max-width: none;
-  padding: var(--content-edge) var(--page-gutter);
+  margin: 0 auto;
+  max-width: min(var(--content-width), calc(100% - 2 * var(--page-gutter)));
+  padding: 2rem var(--page-gutter) 0;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .about-page h2 {
@@ -456,6 +457,10 @@ select:focus {
   font-weight: 800;
   text-decoration-color: currentColor;
   text-underline-offset: 0.35rem;
+}
+
+.about-flow-section {
+  margin-top: clamp(4rem, 7vw, 7rem);
 }
 
 .about-flow-section .about-section-heading {
