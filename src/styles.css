@@ -139,10 +139,8 @@ dt {
 
 main {
   margin: 0 auto;
-  max-width: min(var(--content-width), calc(100% - 2 * var(--page-gutter)));
-  padding: 2rem var(--page-gutter) 0;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
+  max-width: calc(var(--content-width) + 2 * var(--page-gutter));
+  padding: clamp(3rem, 6vw, 6rem) var(--page-gutter);
 }
 
 .section-heading {
@@ -346,11 +344,10 @@ select:focus {
 }
 
 .about-page {
-  margin: 0 auto;
-  max-width: min(var(--content-width), calc(100% - 2 * var(--page-gutter)));
-  padding: 2rem var(--page-gutter) 0;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
+  display: grid;
+  gap: clamp(5rem, 9vw, 8rem);
+  max-width: none;
+  padding: clamp(4rem, 8vw, 8rem) var(--content-edge);
 }
 
 .about-page h2 {

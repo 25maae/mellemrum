@@ -10,9 +10,9 @@
   /* Layout */
   --line: rgba(23, 32, 29, 0.18);
   --shadow: 0 18px 50px rgba(23, 32, 29, 0.09);
-  --page-gutter: clamp(1rem, 2vw, 2.5rem);
-  --content-width: 1440px;
-  --content-edge: clamp(1rem, 2vw, 2.5rem);
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+  --content-width: 1280px;
+  --content-edge: max(var(--page-gutter), calc((100vw - var(--content-width)) / 2));
 
   /* Spacing */
   --h1-spacing: -0.004em;
