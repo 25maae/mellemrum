@@ -76,17 +76,17 @@ export default function AboutPage() {
           </div>
           <ol className="about-flow-list">
             <li>
-              <span>01</span>
+              <h3>01</h3>
               <strong>Arrangører deler events</strong>
               <p>Oplevelsen får en tydelig plads på platformen.</p>
             </li>
             <li>
-              <span>02</span>
+              <h3>02</h3>
               <strong>Brugere opdager</strong>
               <p>Søgning, kategorier og kuratering gør det lettere at vælge.</p>
             </li>
             <li>
-              <span>03</span>
+              <h3>03</h3>
               <strong>Brugere tilmelder sig</strong>
               <p>Fra interesse til tilmelding i ét sammenhængende flow.</p>
             </li>

@@ -110,6 +110,10 @@ select {
   max-width: 12ch;
 }
 
+dt {
+  font-weight: 800;
+}
+
 .hero-copy {
   color: rgba(255, 255, 255, 0.76);
   font-size: clamp(1.1rem, 2vw, 1.4rem);
@@ -477,7 +481,7 @@ select:focus {
 }
 
 .about-flow-list li:nth-child(2) {
-  border-color: var(--secondary-green);
+  border-color: var(--paper);
 }
 
 .about-flow-list li:nth-child(3) {
