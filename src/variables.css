@@ -12,17 +12,15 @@
   --shadow: 0 18px 50px rgba(23, 32, 29, 0.09);
   --page-gutter: clamp(1.25rem, 4vw, 4rem);
   --content-width: 1280px;
-  --content-edge: max(
-    var(--page-gutter),
-    calc((100vw - var(--content-width)) / 2)
-  );
-/* Spacing */
+  --content-edge: clamp(1.25rem, 4vw, 4rem);
+
+  /* Spacing */
   --h1-spacing: -0.004em;
   --h2-spacing: -0.020em;
   --h3-spacing: -0.025em;
   --strong-spacing: -0.005em;
 
-/* Typography */
+  /* Typography */
   font-family:
     Inter,
     ui-sans-serif,
