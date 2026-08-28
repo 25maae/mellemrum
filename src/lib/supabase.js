@@ -7,5 +7,3 @@ const headers = {
 };
 
 export { SUPABASE_URL, headers };
-console.log("SUPABASE URL:", SUPABASE_URL);
-console.log("SUPABASE KEY exists:", !!SUPABASE_APIKEY);
