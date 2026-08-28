@@ -22,7 +22,7 @@ export default function AboutPage() {
               En enkel vej til det, der sker tæt på.
             </h2>
           </div>
-          <div className="about-intro-copy">
+          <div className="about-intro-text">
             <p className="lead">
               Mellemrum samler koncerter, talks, workshops og fællesskaber, så
               du lettere kan opdage noget, du ikke allerede kendte.
@@ -76,17 +76,17 @@ export default function AboutPage() {
           </div>
           <ol className="about-flow-list">
             <li>
-              <span>01</span>
+              <h3>01</h3>
               <strong>Arrangører deler events</strong>
               <p>Oplevelsen får en tydelig plads på platformen.</p>
             </li>
             <li>
-              <span>02</span>
+              <h3>02</h3>
               <strong>Brugere opdager</strong>
               <p>Søgning, kategorier og kuratering gør det lettere at vælge.</p>
             </li>
             <li>
-              <span>03</span>
+              <h3>03</h3>
               <strong>Brugere tilmelder sig</strong>
               <p>Fra interesse til tilmelding i ét sammenhængende flow.</p>
             </li>
