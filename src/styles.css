@@ -376,12 +376,12 @@ select:focus {
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
 }
 
-.about-intro-copy {
+.about-intro-text {
   border-top: 1px solid var(--line);
   padding-top: 1.5rem;
 }
 
-.about-intro-copy p {
+.about-intro-text p {
   margin: 0 0 1.5rem;
 }
 

@@ -22,7 +22,7 @@ export default function AboutPage() {
               En enkel vej til det, der sker tæt på.
             </h2>
           </div>
-          <div className="about-intro-copy">
+          <div className="about-intro-text">
             <p className="lead">
               Mellemrum samler koncerter, talks, workshops og fællesskaber, så
               du lettere kan opdage noget, du ikke allerede kendte.
