@@ -85,7 +85,7 @@ select {
       center / cover;
   color: var(--white);
   min-height: 64vh;
-  padding: clamp(5rem, 10vw, 9rem) var(--content-edge) 5rem;
+  padding: clamp(5rem, 10vw, 9rem) var(--page-gutter) 5rem;
 }
 
 .eyebrow {
@@ -139,8 +139,10 @@ dt {
 
 main {
   margin: 0 auto;
-  max-width: calc(var(--content-width) + 2 * var(--page-gutter));
-  padding: var(--content-edge) var(--page-gutter);
+  max-width: min(var(--content-width), calc(100% - 2 * var(--page-gutter)));
+  padding: 2rem var(--page-gutter) 0;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
 .section-heading {
