@@ -39,7 +39,7 @@ export default function AboutPage() {
           aria-labelledby="about-audiences-title"
         >
           <div className="about-section-heading">
-            <p className="eyebrow">Målgrupper</p>
+            <span className="eyebrow-audience">Målgrupper</span>
             <h2 id="about-audiences-title">
               Mellemrum forbinder oplevelser med mennesker.
             </h2>

@@ -101,6 +101,16 @@ select {
   color: var(--green);
 }
 
+.eyebrow-audience {
+  color: var(--lime);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
 .hero h1,
 .page-header h1 {
   font-size: clamp(3.2rem, 8vw, 7.5rem);
@@ -365,7 +375,7 @@ select:focus {
 }
 
 .about-page p {
-  color: var(--lime);
+  color: var(--ink);
   font-size: 1.08rem;
   line-height: 1.7;
 }
