@@ -85,7 +85,7 @@ select {
       center / cover;
   color: var(--white);
   min-height: 64vh;
-  padding: clamp(5rem, 10vw, 9rem) var(--page-gutter) 5rem;
+  padding: clamp(5rem, 10vw, 9rem) var(--content-edge) 5rem;
 }
 
 .eyebrow {
@@ -182,7 +182,7 @@ main {
   font-size: 0.78rem;
   font-weight: 800;
   gap: 0.45rem;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--span-spacing);
   text-transform: uppercase;
 }
 
@@ -249,7 +249,7 @@ select:focus {
   color: var(--green);
   font-size: 0.72rem;
   font-weight: 850;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--span-spacing);
   margin: 0 0 0.7rem;
   text-transform: uppercase;
 }
@@ -425,7 +425,7 @@ select:focus {
 .about-flow-list span {
   font-size: 0.75rem;
   font-weight: 850;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--span-spacing);
   text-transform: uppercase;
 }
 
@@ -539,7 +539,7 @@ select:focus {
   font-size: 0.78rem;
   font-weight: 800;
   left: 0;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--span-spacing);
   padding: 0.8rem 1rem;
   position: absolute;
   text-transform: uppercase;
@@ -596,7 +596,7 @@ select:focus {
 
 .event-detail h1 {
   font-size: clamp(3rem, 5vw, 5.5rem);
-  letter-spacing: -0.065em;
+  letter-spacing: var(--h1-spacing);
   line-height: 0.95;
   margin: 0 0 1.5rem;
 }
@@ -631,7 +631,7 @@ select:focus {
 .signup-panel form > span {
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--span-spacing);
   margin-top: 0.3rem;
   text-transform: uppercase;
 }
@@ -700,7 +700,7 @@ select:focus {
   background: var(--paper);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--span-spacing);
   text-transform: uppercase;
 }
 
@@ -769,7 +769,7 @@ select:focus {
   color: var(--lime);
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--span-spacing);
   margin-bottom: 0.75rem !important;
   text-transform: uppercase;
 }
