@@ -1,4 +1,5 @@
 import { SUPABASE_URL, headers } from "../lib/supabase";
+const query = "select=*,venue:venues(*)";
 
 export async function getEvents() {
   try {
@@ -19,7 +20,7 @@ export async function getEvents() {
 
 export async function getEvent(eventId) {
   try {
-    const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}`, {
+    const response = await fetch(`${SUPABASE_URL}/events?id=eq.${eventId}&${query}`, {
       headers,
     });
 

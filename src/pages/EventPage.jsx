@@ -53,14 +53,14 @@ export default function EventPage() {
               <div>
                 <dt>Sted</dt>
                 <dd>
-                  {event.venueName}
+                  {event.venue.name}
                   <br />
-                  {event.venueAddress}, {event.venuePostalCode}{" "}
-                  {event.venueCity}
-                  {event.venueWebsite && (
+                  {event.venue.address}, {event.venue.postalCode}{" "}
+                  {event.venue.city}
+                  {event.venue.website && (
                     <>
                       <br />
-                      <a href={event.venueWebsite}>Besøg venue</a>
+                      <a href={event.venue.website}>Besøg venue</a>
                     </>
                   )}
                 </dd>
