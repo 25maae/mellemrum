@@ -1,22 +1,72 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router";
+import { SUPABASE_URL, headers } from "../lib/supabase";
 import { usePageTitle } from "../hooks/usePageTitle";
 import { useEvents } from "../hooks/useEvents";
 
 export default function EventPage() {
   const { eventId } = useParams();
-  const { event } = useEvents(eventId);
+  const { event, loading, error } = useEvents(eventId);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   usePageTitle(event?.title || "Event");
 
-  async function handleSubmit(eventSubmit) {
-    eventSubmit.preventDefault();
-    console.log({ name, email, event: event.title });
+  if (loading) {
+    return <main className="event-page"><p>Henter event...</p></main>;
   }
 
-  if (!event) {
-    return null;
+  if (error || !event) {
+    return <main className="event-page"><p>Event blev ikke fundet.</p></main>;
+  }
+
+  async function createRegistration() {
+    const newRegistration = {
+      name,
+      email,
+      status: "Ny",
+      eventTitle: event.title,
+      eventDate: event.date,
+      eventLocation: event.venue?.name || event.venueName || "Ukendt sted",
+    };
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/registrations`, {
+        method: "POST",
+        headers: {
+          ...headers,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newRegistration),
+      });
+
+      if (!response.ok) {
+        throw new Error("Kunne ikke gemme tilmelding");
+      }
+
+      return true;
+    } catch (error) {
+      console.error("Fejl ved tilmelding:", error);
+      return false;
+    }
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!name.trim() || !email.trim() || !event) {
+      return;
+    }
+
+    const ok = await createRegistration();
+
+    if (ok) {
+      setName("");
+      setEmail("");
+      setSuccessMessage("Du er nu tilmeldt!");
+    } else {
+      setSuccessMessage("Der opstod en fejl. Prøv igen.");
+    }
   }
 
   const date = new Date(event.date);
@@ -102,6 +152,10 @@ export default function EventPage() {
                 placeholder="dig@example.com"
               />
             </label>
+
+            {successMessage && (
+              <p className="success-message">{successMessage}</p>
+            )}
 
             <button type="submit">Tilmeld mig</button>
           </form>

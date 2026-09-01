@@ -646,6 +646,15 @@ select:focus {
   text-transform: uppercase;
 }
 
+.success-message {
+  color: var(--green);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 0.75rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.15rem;
+}
+
 .signup-panel button {
   background: var(--green);
   border: 0;
