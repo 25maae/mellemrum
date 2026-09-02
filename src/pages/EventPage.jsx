@@ -79,7 +79,11 @@ export default function EventPage() {
         </Link>
 
         <section className="event-detail">
-          <img src={event.image} alt="Billede af pågældende event" />
+          <img
+            src={event.image}
+            alt="Billede af pågældende event"
+            loading="lazy"
+          />
           <div className="event-detail-content">
             <p className="event-category">{event.category}</p>
             <h1>{event.title}</h1>
