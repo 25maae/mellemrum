@@ -13,7 +13,7 @@ export default function ContactPage() {
           <a href="mailto:hej@mellemrum.dk">hej@mellemrum.dk</a>.
         </p>
         <p class="hero-copy">
-          Du kan også følge med på:{" "}
+          Du kan også følge med på: {" "}
           <Link to="/LinkedIn" className="contact-link">
             LinkedIn
           </Link>
