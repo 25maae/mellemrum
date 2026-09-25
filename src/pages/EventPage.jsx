@@ -10,16 +10,23 @@ export default function EventPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-
   const emailIsValid = email.trim() !== "" && email.includes("@");
   usePageTitle(event?.title || "Event");
 
   if (loading) {
-    return <main className="event-page"><p>Henter event...</p></main>;
+    return (
+      <main className="event-page">
+        <p>Henter event...</p>
+      </main>
+    );
   }
 
   if (error || !event) {
-    return <main className="event-page"><p>Event blev ikke fundet.</p></main>;
+    return (
+      <main className="event-page">
+        <p>Event blev ikke fundet.</p>
+      </main>
+    );
   }
 
   async function createRegistration() {
@@ -151,6 +158,11 @@ export default function EventPage() {
 
             <label>
               E-mail
+              {email.length > 0 && !emailIsValid && (
+                <small className="field-help">
+                  Vi sender din bekræftelse hertil.
+                </small>
+              )}
               <input
                 type="email"
                 value={email}
@@ -159,10 +171,10 @@ export default function EventPage() {
                 onChange={(inputEvent) => setEmail(inputEvent.target.value)}
                 placeholder="dig@example.com"
               />
-
               {email.length > 0 && !emailIsValid && (
                 <span className="field-error" role="alert">
-                Skriv en gyldig e-mailadresse</span>
+                  Skriv en gyldig e-mailadresse
+                </span>
               )}
             </label>
 
