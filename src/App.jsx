@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage";
 import EventPage from "./pages/EventPage";
 import RegistrationsPage from "./pages/RegistrationsPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ContactPage from "./pages/ContactPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/om" element={<AboutPage />} />
         <Route path="/tilmeldinger" element={<RegistrationsPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/kontakt" element={<ContactPage />} />
       </Routes>
       <Footer />
     </>
