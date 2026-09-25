@@ -584,6 +584,10 @@ select:focus {
   margin-bottom: 2rem;
 }
 
+.contact-link {
+  color: var(--lime);
+}
+
 .event-detail {
   background: var(--paper);
   border-radius: 18px;
