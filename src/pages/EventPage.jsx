@@ -10,6 +10,8 @@ export default function EventPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
+  const emailIsValid = email.trim() !== "" && email.includes("@");
   usePageTitle(event?.title || "Event");
 
   if (loading) {
@@ -54,7 +56,7 @@ export default function EventPage() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (!name.trim() || !email.trim() || !event) {
+    if (!name.trim() || !emailIsValid || !event) {
       return;
     }
 
@@ -152,9 +154,16 @@ export default function EventPage() {
               <input
                 type="email"
                 value={email}
+                required
+                aria-invalid={email.length > 0 && !emailIsValid}
                 onChange={(inputEvent) => setEmail(inputEvent.target.value)}
                 placeholder="dig@example.com"
               />
+
+              {email.length > 0 && !emailIsValid && (
+                <span className="field-error" role="alert">
+                Skriv en gyldig e-mailadresse</span>
+              )}
             </label>
 
             {successMessage && (

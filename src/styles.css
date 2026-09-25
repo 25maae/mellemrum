@@ -520,6 +520,18 @@ select:focus {
   max-width: 22rem;
 }
 
+.field-error {
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-top: -0.2rem;
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--red);
+  border-width: 2px;
+}
+
 .about-city {
   align-items: stretch;
   background: var(--paper);
